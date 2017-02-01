@@ -1,6 +1,8 @@
+main.css
 bundle.js
 .htaccess
 npm-debug.log
+bower_components/
 node_modules/
 *.swp
 tmp/

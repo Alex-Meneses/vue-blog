@@ -1,0 +1,26 @@
+{
+  "name": "vue-blog",
+  "description": "sample vue blog",
+  "main": "",
+  "authors": [
+    "maurop123"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "vue",
+    "app",
+    "blog"
+  ],
+  "homepage": "https://github.com/maurop123/vue-blog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "neat": "^1.8.0"
+  }
+}

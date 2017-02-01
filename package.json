@@ -1,33 +1,24 @@
 {
-  "name": "simple-vue-starter",
+  "name": "vue-blog",
   "version": "1.0.0",
-  "description": "vue start app framework for blogs and portfolios",
-  "main": "index.js",
+  "description": "sample vue blog",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:browserify": "watchify -p browserify-hmr -t [babelify ext .js] -t [stringify ext .html] src/index.js -o public/bundle.js",
     "watch:server": "ws -d public/ -s index.html",
+    "watch:sass": "node-sass -w src/ -o public/  src/main.scss main.css",
+    "sass": "node-sass 'npm run sass:include' src/main.scss > public/main.css",
+    "sass:include": "--include-path bower_components/bourbon/app/assets/stylesheets --include-path bower_components/neat/app/assets/stylesheets",
     "build:prod": "browserify -t [babelify ext .js] -t [stringify ext .html] -t [uglifyify -x .js] src/index.js -o dist/bundle.js",
-    "local": "npm-run-all --parallel watch:*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maurop123/maurop123-portfolio.git"
+    "local": "npm run sass && npm-run-all --parallel watch:*"
   },
   "keywords": [
     "vue",
     "app",
-    "framework",
-    "bootstrap",
-    "blog",
-    "portfolio"
+    "blog"
   ],
   "author": "maurop123",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maurop123/maurop123-portfolio/issues"
-  },
-  "homepage": "https://github.com/maurop123/maurop123-portfolio#readme",
   "dependencies": {
     "firebase": "^3.6.4",
     "vuex-router-sync": "^4.0.2"
@@ -35,12 +26,12 @@
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-preset-env": "^1.1.4",
-    "babel-preset-es2015": "^6.13.2",
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "browserify-hmr": "^0.3.5",
     "http-server": "^0.9.0",
     "local-web-server": "^1.2.6",
+    "node-sass": "^4.3.0",
     "npm-run-all": "^4.0.1",
     "stringify": "^5.1.0",
     "uglifyify": "^3.0.4",
